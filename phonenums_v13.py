@@ -1,0 +1,29 @@
+import phonenumbers
+from phonenumbers import PhoneNumberMatcher
+import csv
+
+# Ask for file path (single line input!)
+file_path = input("Enter path to your OCR text file: ")
+
+# Read the full epaper text from file
+with open(file_path, 'r', encoding='utf-8') as f:
+    epaper_text = f.read()
+
+matcher = PhoneNumberMatcher(epaper_text, "IN")
+phones = []
+
+for match in matcher:
+    original_num = phonenumbers.format_number(match.number, phonenumbers.PhoneNumberFormat.NATIONAL)
+    phones.append(original_num)  # Store as simple strings, not lists
+
+# De-duplicate using set (simpler and correct for strings)
+phones = list(set(phones))
+
+# Write CSV
+with open('epaper_phones.csv', 'w', newline='', encoding='utf-8') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(['Phone Number'])
+    writer.writerows([[phone] for phone in phones])  # Wrap each phone in list for CSV
+
+print(f"✅ Saved {len(phones)} unique phones to epaper_phones.csv")
+print("Extracted phones:", phones)
