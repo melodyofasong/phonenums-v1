@@ -8,6 +8,8 @@
 
 **Note:** Works exclusively for Indian formats (+91 or 10-digit).
 
+this is just a learning project btw :D
+
 ## Requirements
 - Python 3+
 - `pip install phonenumbers`
