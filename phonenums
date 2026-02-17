@@ -27,3 +27,4 @@ with open('epaper_phones.csv', 'w', newline='', encoding='utf-8') as csvfile:
 
 print(f"✅ Saved {len(phones)} unique phones to epaper_phones.csv")
 print("Extracted phones:", phones)
+
