@@ -21,7 +21,8 @@ with open('epaper_phones.csv', 'w', newline='', encoding='utf-8') as csvfile:
     writer.writerow(['Phone Number'])
     writer.writerows([[phone] for phone in phones]) 
 
-print(f"✅ Saved {len(phones)} unique phones to epaper_phones.csv")
+print(f"Saved {len(phones)} unique phones to epaper_phones.csv")
 print("Extracted phones:", phones)
+
 
 
