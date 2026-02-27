@@ -14,7 +14,7 @@ A little tool built for the whimsy (and to save my sanity). This script plucks I
 - `pip install phonenumbers`
 
 2. Usage
-- Run the script: `python phonenums_v13.py`
+- Run the script: `python phonenums.py`
 - When prompted, paste the full path to your text file.
 - Check your folder for **epaper_phones.csv**  , all your unique numbers will be waiting there.
 
